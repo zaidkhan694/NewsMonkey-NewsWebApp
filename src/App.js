@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Navbar from './Component/Navbar'
+import React from 'react'
+import Navbar from './Component/Navbar';
 import News from './Component/News'
 
 import {
@@ -7,26 +7,27 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-export default class App extends Component {
-  page = 9;
-  render() {
+const App = () => {
+  const pageSize = 9;
+  // const [page, setpage] = useState()
     return ( 
      <>
      <div>
       <Router>
-       <Navbar></Navbar>
+       <Navbar/>
      <Switch>
-     <Route exact path="/"><News key="general" pageSize={this.page} country={"in"} category={"general"}/></Route>
-     <Route exact path="/Entertainment"><News key="entertainment" pageSize={this.page} country={"in"} category={"entertainment"}/></Route>
-     <Route exact path="/Science"><News key="science" pageSize={this.page} country={"in"} category={"science"}/></Route>
-     <Route exact path="/Sports"><News key="sports" pageSize={this.page} country={"in"} category={"sports"}/></Route>
-     <Route exact path="/Technology"><News key="technology" pageSize={this.page} country={"in"} category={"technology"}/></Route>
-     <Route exact path="/Business"><News key="business" pageSize={this.page} country={"in"} category={"business"}/></Route>
+     <Route exact path="/"><News key="general" pageSize={pageSize} country={"in"} category={"general"}/></Route>
+     <Route exact path="/Entertainment"><News key="entertainment" pageSize={pageSize} country={"in"} category={"entertainment"}/></Route>
+     <Route exact path="/Science"><News key="science" pageSize={pageSize} country={"in"} category={"science"}/></Route>
+     <Route exact path="/Sports"><News key="sports" pageSize={pageSize} country={"in"} category={"sports"}/></Route>
+     <Route exact path="/Technology"><News key="technology" pageSize={pageSize} country={"in"} category={"technology"}/></Route>
+     <Route exact path="/Business"><News key="business" pageSize={pageSize} country={"in"} category={"business"}/></Route>
         </Switch>
         </Router>
       </div>
       </>
     )
-  }
+  
 }
+export default App;
 
